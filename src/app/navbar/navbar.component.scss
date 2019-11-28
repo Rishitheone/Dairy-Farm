@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,500,600&display=swap');
+$base-font:	  'Oswald', sans-serif;
+$alt-font:	'Oswald', sans-serif;
+$base-color:    #4b4e53;
+$white:		      #FFFFFF;
+$color-blue:		#18779C;
+$color-accent:	#fff;
+
+.navbar {
+	width: 100%;
+	border-radius: 0;
+	margin-bottom: 0px;
+	z-index: 999;
+	min-height: 100px;
+	background: $color-accent;
+	border-bottom:1px solid #ddd;
+	-webkit-transition-duration: 0.5s;
+	-moz-transition-duration: 0.5s;
+	-o-transition-duration: 0.5s;
+	transition-duration: 0.5s;
+	-webkit-transition-timing-function: swing;
+	-moz-transition-timing-function: swing;
+	-o-transition-timing-function: swing;
+	transition-timing-function: swing;
+	
+	
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+	ul {
+		padding-left: 0;
+		list-style: none;
+	}
+}
+
+
+.sticky {
+	.navbar {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: auto;
+		background: $white;
+		border-bottom:0;
+		box-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+		border: 0;
+		min-height: 74px;
+
+		 -webkit-animation: animFixedMain .5s forwards;
+    -moz-animation: animFixedMain .5s forwards;
+    -o-animation: animFixedMain .5s forwards;
+    animation: animFixedMain .5s forwards;
+		
+		.navbar-brand {
+			font-size: 25px;
+			padding: 7px 15px 5px 15px;
+			height: 74px;
+
+			> img {
+				max-height: 50px;
+			}
+		}
+
+		
+	}
+
+	
+}
+
+
+@-moz-keyframes slidenavAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes slidenavAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes slidenavAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// Navigation Variables
+$content-width: 1000px;
+$breakpoint: 799px;
+$nav-height: 70px;
+$nav-background: #262626;
+$nav-font-color: rgb(0, 0, 0);
+$link-hover-color: #2581DC;
+nav {
+    float: right;
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        float: left;
+        position: relative;
+        a,
+        a:visited {
+          display: block;
+          padding: 0 30px;
+          line-height: $nav-height;
+          background: transparent;
+          color: $nav-font-color;
+          text-decoration: none;
+          font-family: 'Oswald', sans-serif;
+          letter-spacing: 1px;
+          &:hover {
+            background: $link-hover-color;
+            color: $nav-font-color;
+          }
+          &:not(:only-child):after {
+            padding-left: 4px;
+            content: ' ▾';
+          }
+        } // Dropdown list
+        ul li {
+          min-width: 190px;
+          a {
+            padding: 15px;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+  }
+  .nav-dropdown {
+    position: absolute;
+    display: none;
+    z-index: 1;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+  }
+  .nav-mobile {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: $nav-background;
+    height: $nav-height;
+    width: $nav-height;
+  }
+  i#cart {
+    background: #ffbb00;
+    color: black;
+    border-radius: 50%;
+    padding: 10px;
+}
+i#cart:hover{
+  color: #fff;
+  padding: 12px;
+}
+  @media only screen and (max-width: 798px) {
+    // Hamburger nav visible on mobile only
+    .nav-mobile {
+      display: block;
+    }
+    nav {
+     width: 100%;
+      padding: $nav-height 0 15px;
+      ul {
+        display: none;
+        li {
+          float: none;
+          a {
+            padding: 15px;
+            line-height: 20px;
+          }
+          ul li a {
+            padding-left: 30px;
+          }
+        }
+      }
+    }
+    .nav-dropdown {
+      position: static;
+    }
+  }
+  @media screen and (min-width: $breakpoint) {
+    .nav-list {
+      display: block !important;
+    }
+  }
+  #nav-toggle {
+    position: absolute;
+    left: 18px;
+    top: 22px;
+    cursor: pointer;
+    padding: 10px 35px 16px 0px;
+    span,
+    span:before,
+    span:after {
+      cursor: pointer;
+      border-radius: 1px;
+      height: 5px;
+      width: 35px;
+      background: $nav-font-color;
+      position: absolute;
+      display: block;
+      content: '';
+      transition: all 300ms ease-in-out;
+    }
+    span:before {
+      top: -10px;
+    }
+    span:after {
+      bottom: -10px;
+    }
+    &.active span {
+      background-color: transparent;
+      &:before,
+      &:after {
+        top: 0;
+      }
+      &:before {
+        transform: rotate(45deg);
+      }
+      &:after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+  ///////////////////////////////////////////////////////////////
+  .top_panel_wrap.top_panel_style_4 .contact_field {
+    float: right;
+    text-align: left;
+    margin-top: 1.5em;
+    margin-bottom: 1.35em;
+}
